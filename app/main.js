@@ -5,22 +5,22 @@ Vue.config.silent = (TNS_ENV === 'production')
 const firebase = require("nativescript-plugin-firebase");
 // require("nativescript-plugin-firebase");
 
-firebase.init({
-  // Optionally pass in properties for database, authentication and cloud messaging,
-  // see their respective docs.
-  onMessageReceivedCallback: function(message) {
-	  console.log("Title: " + message.title);
-	  console.log("Body: " + message.body);
-	  // if your server passed a custom property called 'foo', then do this:
-	}
-}).then(
-  instance => {
-    console.log("firebase.init done");
-  },
-  error => {
-    console.log(`firebase.init error: ${error}`);
-  }
-);
+// firebase.init({
+//   // Optionally pass in properties for database, authentication and cloud messaging,
+//   // see their respective docs.
+//   onMessageReceivedCallback: function(message) {
+// 	  console.log("Title: " + message.title);
+// 	  console.log("Body: " + message.body);
+// 	  // if your server passed a custom property called 'foo', then do this:
+// 	}
+// }).then(
+//   instance => {
+//     console.log("firebase.init done");
+//   },
+//   error => {
+//     console.log(`firebase.init error: ${error}`);
+//   }
+// );
 
 // firebase.login({
 //     type: firebase.LoginType.PHONE,
