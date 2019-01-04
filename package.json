@@ -5,7 +5,7 @@
   "author": "Turi",
   "license": "MIT",
   "nativescript": {
-    "id": "test.native.firebase.way.os",
+    "id": "nativescript.firebase.phonelogin",
     "tns-ios": {
       "version": "5.0.0"
     },
