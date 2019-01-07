@@ -12,5 +12,4 @@ export function messageReceivedHandler(message) {
 
 export function pushTokenReceivedHandler(token) {
 	console.log("Firebase push token: " + token);
-	this.$store.dispatch("setPushToken", token);
 }
