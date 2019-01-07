@@ -70,10 +70,21 @@
 			};
 		},
 		created() {
-			 if (applicationSettings.getBoolean("isLoggedIn")) {
-			 	console.log("USER HAS ALREADY BEEN REGISTERED ON THIS DEVICE");
-			 	this.$goto("home");
-			 }
+			/**
+			firebase.init({
+				onMessageReceivedCallback: function(message) {
+					console.log("Title: " + message.title);
+					console.log("Body: " + message.body);
+				}
+			}).then(
+				instance => {
+					console.log("firebase.init done");
+				},
+				error => {
+					console.log(`firebase.init error: ${error}`);
+				}
+			);
+			 */
 		},
 		computed: {
 			pageClass() {
@@ -102,18 +113,7 @@
 			getCode: function () {
 				let wholeNumber = this.countryCode + this.phoneNumber;
 				console.log("RUNNING GET CODE");
-				this.phoneLogin(wholeNumber).then(result => {
-					console.log("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPHHHHHONE");
-					console.log(result);
-					if (!result) {
-						console.log("NOT LOGGED IN WITH PHONE");
-					} else {
-						console.log("LOGGED IN WITH PHONE");
-					}
-
-				}).catch(error => {
-					alert(error);
-				});
+				this.phoneLogin(wholeNumber);
 				this.sent_verification_code = true;
 				this.$refs.vCode.nativeView.focus();
 			},
@@ -125,20 +125,23 @@
 				});
 			},
 			phoneLogin: (phoneNumber) => {
-				return firebase.login({
+				firebase.login({
 					type: firebase.LoginType.PHONE,
 					phoneOptions: {
 						phoneNumber: phoneNumber,
 						verificationPrompt: "The received verification code" // default "Verification code"
 					}
-				}).then(result => {
-					console.log("USER PHONE VERIFICATION SUCCEEEDED");
-					console.log(result);
-					//JSON.stringify(result);
-					return result;
-				}, errorMessage => {
-					console.log(errorMessage);
-				});
+				}).then(
+					function (result) {
+						JSON.stringify(result);
+						console.log('SEND VERIFICATION CODE');
+						console.log(result);
+					},
+					function (errorMessage) {
+						console.log('ERROR VERIFICATION');
+						console.log(errorMessage);
+					}
+				);
 			},
 			checkDevice() {
 				console.log(platformModule.device.model);
