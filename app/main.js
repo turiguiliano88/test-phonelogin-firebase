@@ -1,11 +1,14 @@
 import Vue from 'nativescript-vue'
 import App from './components/App'
 import OnBoarding from "./components/OnBoarding"
+import router from "./router"
+import store from "./store"
 // Prints Vue logs when --env.production is *NOT* set while building
 Vue.config.silent = (TNS_ENV === 'production')
 import * as firebase from "nativescript-plugin-firebase"
-import { firebaseInit } from "./firebaseapp";
-// require("nativescript-plugin-firebase");
+// import { firebaseInit } from "./firebaseapp";
+require("nativescript-plugin-firebase");
+
 
 // firebase.init({
 //   // Optionally pass in properties for database, authentication and cloud messaging,
@@ -39,15 +42,15 @@ import { firebaseInit } from "./firebaseapp";
 //       }
 //   );
 
-firebaseInit().then(result => {
-	console.log("FFFFFFFFFFFFFFFFFFFIREBASE", result);
-	if (!result) {
-		alert("Issue initializing firebase");
-	} else {
-		//Might rather belong in beforeCreated. See what works. Maybe just store.dispatch("authChangeListener") before Vue initialization?
+// firebaseInit().then(result => {
+// 	console.log("FFFFFFFFFFFFFFFFFFFIREBASE", result);
+// 	if (!result) {
+// 		alert("Issue initializing firebase");
+// 	} else {
+// 		//Might rather belong in beforeCreated. See what works. Maybe just store.dispatch("authChangeListener") before Vue initialization?
 
-	}
-});
+// 	}
+// });
 
 new Vue({
   render: h => h('frame', [h(OnBoarding)])

@@ -35,7 +35,7 @@
 </template>
 <script>
 	import * as firebase from "nativescript-plugin-firebase";
-	//import { firebaseInit } from "../firebaseapp";
+	import { firebaseInit } from "../firebaseapp";
 
 	let applicationSettings = require("application-settings");
 
@@ -71,7 +71,7 @@
 			};
 		},
 		created() {
-			/**
+			
 			firebaseInit().then(
 				instance => {
 					console.log("firebase.init done");
@@ -80,7 +80,7 @@
 					console.log(`firebase.init error: ${error}`);
 				}
 			);
-			 */
+			 
 			/**
 			firebase.init({
 				onMessageReceivedCallback: function(message) {
