@@ -34,6 +34,7 @@
 	</Page>
 </template>
 <script>
+	import { mapActions } from "vuex";
 	import * as firebase from "nativescript-plugin-firebase";
 	import { firebaseInit } from "../firebaseapp";
 
@@ -121,10 +122,15 @@
 			}
 		},
 		methods: {
+			...mapActions(["phoneLogin"]),
 			getCode: function () {
 				let wholeNumber = this.countryCode + this.phoneNumber;
 				console.log("RUNNING GET CODE");
-				this.phoneLogin(wholeNumber);
+				this.phoneLogin(wholeNumber).then(reuslt => {
+					console.log("LOGIN SUCCESS", result);
+				}).catch(error => {
+					console.log("LOGIN ERROR", error);
+				});
 				this.sent_verification_code = true;
 				this.$refs.vCode.nativeView.focus();
 			},
@@ -135,6 +141,7 @@
 					object: {code: this.code}
 				});
 			},
+			/**
 			phoneLogin: (phoneNumber) => {
 				firebase.login({
 					type: firebase.LoginType.PHONE,
@@ -153,7 +160,7 @@
 						console.log(errorMessage);
 					}
 				);
-			},
+			},*/
 			checkDevice() {
 				console.log(platformModule.device.model);
 				console.log(platformModule.device.deviceType);
