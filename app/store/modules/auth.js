@@ -1,6 +1,5 @@
-import * as firebase from "nativescript-plugin-firebase";
-import { firebaseDatabase } from "../../firebase/firebaseapp";
-import router from "../../router";
+const firebase = require("nativescript-plugin-firebase");
+import { firebaseDatabase } from "../../firebaseapp";
 const usersCollection = firebaseDatabase.collection("users");
 const usersPublicCollection = firebaseDatabase.collection("users_public");
 let applicationSettings = require("application-settings");
@@ -109,6 +108,7 @@ const actions = {
                 return result;
         }, errorMessage => {
         	console.log(errorMessage);
+        	throw new Error(errorMessage);
         });
     },
     /**
@@ -127,12 +127,6 @@ const actions = {
 			return;
 		}
 		const uid = rootState.auth.uid;
-		usersCollection.doc(uid).update({push_token: token}).then(() => {
-			return true;
-		}).catch(error => {
-			console.log(error);
-			return false;
-		})
 	},
 };
 

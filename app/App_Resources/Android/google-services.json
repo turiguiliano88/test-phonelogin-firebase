@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "71864989605",
+    "firebase_url": "https://way-backend.firebaseio.com",
+    "project_id": "way-backend",
+    "storage_bucket": "way-backend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71864989605:android:8b6312dad069661b",
+        "android_client_info": {
+          "package_name": "nativescript.firebase.phonelogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71864989605-qfopcu0utck41l2k0p9gdadvbl4h48ck.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nativescript.firebase.phonelogin",
+            "certificate_hash": "ad0432343429c8d687ac85576b62d6bdb7caca43"
+          }
+        },
+        {
+          "client_id": "71864989605-cq5khtli1ne8vdege8fer7ab9ui0t8v3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9BCiga8zvGVPg3IFw7HrQ4Xs5ivd69tw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71864989605-cq5khtli1ne8vdege8fer7ab9ui0t8v3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "71864989605-s7hqhvetv9n0m207k9e78d9af6hscop1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nativescript.firebase.phonelogin"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71864989605:android:df219fcd617fdc73",
+        "android_client_info": {
+          "package_name": "no.way.m.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71864989605-vre09rh4fue4aih9urbk2fsigq71c9o3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "no.way.m.app",
+            "certificate_hash": "af16ea262610633cd06beb0914316862efd302e4"
+          }
+        },
+        {
+          "client_id": "71864989605-cq5khtli1ne8vdege8fer7ab9ui0t8v3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9BCiga8zvGVPg3IFw7HrQ4Xs5ivd69tw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71864989605-cq5khtli1ne8vdege8fer7ab9ui0t8v3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "71864989605-s7hqhvetv9n0m207k9e78d9af6hscop1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "nativescript.firebase.phonelogin"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

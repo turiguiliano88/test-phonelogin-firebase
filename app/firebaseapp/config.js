@@ -11,7 +11,8 @@ let firebaseConfig = {
 	onMessageReceivedCallback: messageReceivedHandler,
 	onPushTokenReceivedCallback: pushTokenReceivedHandler,
 	showNotifications: true,
-	showNotificationsWhenInForeground: true
+	showNotificationsWhenInForeground: true,
+	timestampsInSnapshots: true
 
 }
 

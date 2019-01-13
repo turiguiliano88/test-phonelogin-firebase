@@ -11,13 +11,13 @@
 				<GridLayout row="1" columns="auto, 10, auto, auto" class="input-country">
 					<Image src="res://s_norway" height="20" col="0"/>
 					<Image src="res://triangle" height="4" col="1"/>
-					<TextField :text="countryCode" class="instruction large medium-weight" col="2"/>
+					<TextField v-model="countryCode" class="instruction large medium-weight" col="2"/>
 					<TextField v-model="phoneNumber" hint="Ditt telefonnummer"
 					           style.placeholderColor="rgba(255,255,255,0.5)" class="instruction large left-align"
 					           keyboardType="phone" col="3" @returnPress="getCode"/>
 				</GridLayout>
 				<GridLayout row="2" columns="*, 100, 10">
-					<Button :text="'fa-long-arrow-alt-right' | fonticon" col="1" class="circular-next fa fa-black" :isEnabled="isPhoneNumber" @tap="getCode"/>
+					<Button text="Go" col="1" class="circular-next fa fa-black" :isEnabled="isPhoneNumber" @tap="getCode"/>
 				</GridLayout>
 			</GridLayout>
 			<GridLayout row="1" rows="150, 50, 50, 150, *" v-show="sent_verification_code">
@@ -27,7 +27,7 @@
 				           style="letter-spacing: 0.5ch; text-align: center;" keyboardType="phone" maxLength="6" col="0"
 				           @returnPress="verifyCode" />
 				<GridLayout row="3" columns="*, 100, 10">
-					<Button :text="'fa-long-arrow-alt-right' | fonticon" col="1" class="circular-next fa fa-black" :isEnabled="isCode" @tap="verifyCode"/>
+					<Button text="Go" col="1" class="circular-next fa fa-black" :isEnabled="isCode" @tap="verifyCode"/>
 				</GridLayout>
 			</GridLayout>
 		</GridLayout>
@@ -35,7 +35,7 @@
 </template>
 <script>
 	import { mapActions } from "vuex";
-	import * as firebase from "nativescript-plugin-firebase";
+	import firebase from "nativescript-plugin-firebase";
 	import { firebaseInit } from "../firebaseapp";
 
 	let applicationSettings = require("application-settings");
@@ -72,7 +72,7 @@
 			};
 		},
 		created() {
-			
+			/**
 			firebaseInit().then(
 				instance => {
 					console.log("firebase.init done");
@@ -81,6 +81,7 @@
 					console.log(`firebase.init error: ${error}`);
 				}
 			);
+			 */
 			 
 			/**
 			firebase.init({
@@ -126,7 +127,7 @@
 			getCode: function () {
 				let wholeNumber = this.countryCode + this.phoneNumber;
 				console.log("RUNNING GET CODE");
-				this.phoneLogin(wholeNumber).then(reuslt => {
+				this.phoneLogin(wholeNumber).then(result => {
 					console.log("LOGIN SUCCESS", result);
 				}).catch(error => {
 					console.log("LOGIN ERROR", error);
